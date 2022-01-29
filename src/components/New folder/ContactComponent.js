@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 function Contact(props) {
     return (
         <div className="container">
-            <div className="row">
-                <div className="col">
+            <div className="col">
                     <Breadcrumb>
                         <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
                         <BreadcrumbItem active>Contact Us</BreadcrumbItem>
@@ -14,7 +13,7 @@ function Contact(props) {
                     <h2>Contact Us</h2>
                     <hr />
                 </div>
-            </div>
+           
 
             <div className="row row-content align-items-center">
                 <div className="col-sm-4">
