@@ -11,6 +11,7 @@ const isNumber = val => !isNaN(+val);
 const validEmail = val => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
 class Contact extends Component {
+
     constructor(props) {
         super(props);
 
@@ -29,26 +30,23 @@ class Contact extends Component {
                 email: false
             }
         };
-      
+
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-  
 
     handleSubmit(values) {
         console.log("Current state is: " + JSON.stringify(values));
         alert("Current state is: " + JSON.stringify(values));
     }
+
     render() {
 
-         return (
+        return (
             <div className="container">
                 <div className="row">
                     <div className="col">
                         <Breadcrumb>
-                            <BreadcrumbItem>
-                                <Link to="/home">Home</Link>
-                            </BreadcrumbItem>
+                            <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
                             <BreadcrumbItem active>Contact Us</BreadcrumbItem>
                         </Breadcrumb>
                         <h2>Contact Us</h2>
@@ -60,38 +58,28 @@ class Contact extends Component {
                     <div className="col-sm-4">
                         <h5>Our Address</h5>
                         <address>
-                            1 Nucamp Way
-                            <br />
-                            Seattle, WA 98001
-                            <br />
+                            1 Nucamp Way<br />
+                            Seattle, WA 98001<br />
                             U.S.A.
                         </address>
                     </div>
                     <div className="col">
-                        <a role="button" className="btn btn-link" href="tel:+12065551234">
-                            <i className="fa fa-phone" /> 1-206-555-1234
-                        </a>
-                        <br />
-                        <a
-                            role="button"
-                            className="btn btn-link"
-                            href="mailto:fakeemail@fakeemail.co"
-                        >
-                            <i className="fa fa-envelope-o" /> campsites@nucamp.co
-                        </a>
+                        <a role="button" className="btn btn-link" href="tel:+12065551234"><i className="fa fa-phone" /> 1-206-555-1234</a><br />
+                        <a role="button" className="btn btn-link" href="mailto:fakeemail@fakeemail.co"><i className="fa fa-envelope-o" /> campsites@nucamp.co</a>
                     </div>
                 </div>
+
                 <div className="row row-content">
                     <div className="col-12">
                         <h2>Send us your Feedback</h2>
                         <hr />
                     </div>
                     <div className="col-md-10">
-                    <LocalForm onSubmit={values => this.handleSubmit(values)}>
+                        <LocalForm onSubmit={values => this.handleSubmit(values)}>
                             <Row className="form-group">
                                 <Label htmlFor="firstName" md={2}>First Name</Label>
                                 <Col md={10}>
-                                <Control.text model=".firstName" id="firstName" name="firstName"
+                                    <Control.text model=".firstName" id="firstName" name="firstName"
                                         placeholder="First Name"
                                         className="form-control"
                                         validators={{
